@@ -1,0 +1,647 @@
+html {
+	background-image: url("../slike/pattern.png");
+	background-color: #ff9900;
+}
+
+body {
+	background-color: transparent;
+	margin: 0 10%;
+}
+
+header {
+	height: 60px;
+	background: linear-gradient(to bottom, #ff9900, gold);
+	border-top: none;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
+	border-left: 2px solid gray;
+}
+
+header h1 {
+	margin-top: 0;
+	text-align: center;
+	line-height: 60px;
+	font-family: Great Vibes;
+}
+
+nav {
+	position: absolute;
+	top: -23px;
+}
+
+nav ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+nav ul li a {
+	padding: 4px 8px;
+	text-decoration: none;
+	background: radial-gradient(gold, #ff9900);
+	border: 2px solid gray;
+	border-bottom: none;
+	margin-left: -5px;
+	color: black;
+}
+
+nav ul li a:active {
+	background: radial-gradient(#ff9900, gold);
+}
+
+#aktiviran {
+	background: white;
+	border-bottom: 2px solid white;
+	z-index: 5;
+}
+
+main {
+	position: relative;
+	margin-top: 5%;
+	background-color: white;
+	padding: 2% 4%;
+	padding-bottom: 2%;
+	transition: padding-bottom 1s;
+	border: 2px solid gray;
+}
+
+#okvir_korisnika, #forma_azuriraj, #forma_promeni_ime {
+	position: relative;
+	background-color: #e6e6e6;
+	width: 100%;
+	height: 196px;
+	border-radius: 20px;
+	box-shadow: 2px 2px 5px gray;
+}
+
+#forma_azuriraj, #forma_promeni_ime {
+	display: none;
+	position: absolute;
+	top: 0;
+	box-shadow: none;
+	z-index: 2;
+}
+
+#forma_promeni_ime form {
+	width: 45%;
+}
+
+#forma_promeni_ime label:nth-of-type(1) {
+	float: left;
+	margin: 40px 20px 20px 40px;
+}
+
+#forma_promeni_ime label:nth-of-type(2) {
+	float: left;
+	margin: 30px 0px 0px 40px;
+}
+
+#forma_promeni_ime input[type=text]:nth-of-type(1) {
+	float: right;
+	padding: 2%;
+	margin: 32px 0px 10px;
+}
+
+#forma_promeni_ime input[type=text]:nth-of-type(2) {
+	float: right;
+	padding: 2%;
+	margin: 20px 0px 0px;
+}
+
+#dugme_otkazi2, #dugme_promeni {
+	position: absolute;
+	top: 155px;
+	left: 13%;
+	background-color: red;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-radius: 10px;
+	border-bottom: 5px solid darkred;
+	outline: none;
+}
+
+#dugme_promeni {
+	left: 26%;
+	background-color: #00cc00;
+	border-bottom: 5px solid darkgreen;
+}
+
+#dugme_otkazi2:hover, #dugme_promeni:hover {
+	cursor: pointer;
+}
+
+#forma_promeni_ime > div {
+	position: absolute;
+	left: 50%;
+	margin-top: 5px;
+}
+
+.greska {
+	display: none;
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	color: white;
+	background-color: red;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 10px;
+	z-index: 3;
+}
+
+.greska:after {
+	content: "";
+	position: absolute;
+	top: 40%;
+	right: -10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent red;
+}
+
+#g_ime {
+	top: 30px;
+	left: 40px;
+}
+
+#g_prezime {
+	top: 97px;
+	left: 40px;
+}
+
+#forma_azuriraj span {
+	position: absolute;
+	bottom: 10px;
+	left: 20%;
+	right: 20%;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	color: red;
+	padding: 1%;
+	border: 1px solid red;
+}
+
+#odabrana {
+	position: absolute;
+	display: none;
+	top: 60px;
+	text-align: center;
+	width: 100%;
+}
+
+#forma_azuriraj input[type=file] {
+	display: none;
+}
+
+#dugme_odaberi {
+	position: absolute;
+	text-align: center;
+	top: 20px;
+	left: 40%;
+	right: 40%;
+	padding: 5px;
+	background: linear-gradient(to bottom, #ff9900, gold);
+}
+
+#dugme_odaberi:hover {
+	cursor: pointer;
+	background: linear-gradient(to bottom, gold, #ff9900);
+}
+
+#dugme_otkazi, #dugme_posalji {
+	position: absolute;
+	top: 110px;
+	left: 42%;
+	background-color: red;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-radius: 10px;
+	border-bottom: 5px solid darkred;
+	outline: none;
+}
+
+#dugme_posalji {
+	left: 52%;
+	background-color: #00cc00;
+	border-bottom: 5px solid darkgreen;
+}
+
+#dugme_otkazi:hover, #dugme_posalji:hover {
+	cursor: pointer;
+}
+
+#okvir_korisnika > img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 2%;
+	background-color: gold;
+	width: 150px;
+	height: 150px;
+	border: 4px solid white;
+}
+
+#azuriraj_profilnu {
+	display: none;
+	position: absolute;
+	text-align: center;
+	bottom: 21px;
+	left: 4px;
+	margin: 0px 2%;
+	width: 150px;
+	height: 20px;
+	background-color: white;
+	opacity: 0.6;
+}
+
+#azuriraj_profilnu:hover {
+	cursor: pointer;
+}
+
+#informacije_korisnika {
+	position: absolute;
+	left: 175px;
+	padding: 2%;
+	height: 165px;
+	right: 0;
+	top: 0;
+}
+
+#informacije_korisnika > span {
+	font-size: 2em;
+	word-spacing: 2px;
+}
+
+#informacije_korisnika > span img {
+	display: inline;
+	vertical-align: -3px;
+	height: 20px;
+	width: 20px;
+}
+
+#informacije_korisnika > span img:hover {
+	cursor: pointer;
+}
+
+#odjava {
+	position: absolute;
+	margin: 2%;
+	background: linear-gradient(to bottom, #0099e6, #00aaff);
+	bottom: 10px;
+	right: 5px;
+}
+
+#odjava:hover {
+	cursor: pointer;
+	background: linear-gradient(to bottom, #00aaff, #0099e6);
+}
+
+#forma_pretrazi_recepte {
+	margin-top: 10px;
+}
+
+#forma_pretrazi_recepte button[type=submit]:hover {
+	cursor: pointer;
+}
+
+#forma_dodaj_recept {
+	position: relative;
+	left: 10%;
+	right: 10%;
+	height: 185px;
+	width: 80%;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+#receptna_slika {
+	display: none;
+}
+
+#forma_dodaj_recept input[type=text] {
+	margin: 10px;
+	width: 70%;
+	text-align: center;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #cccccc;
+}
+
+#forma_dodaj_recept input[type=text]:focus {
+	outline: none;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: gold;
+}
+
+#forma_dodaj_recept input[type=number] {
+	width: 20%;
+	text-align: center;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: #cccccc;
+}
+
+#forma_dodaj_recept input[type=number]:focus {
+	outline: none;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: gold;
+}
+
+#forma_dodaj_recept textarea {
+	width: 94.7%;
+	border: none;
+	margin: 0 10px;
+	padding: 10px;
+	overflow: auto;
+}
+
+#forma_dodaj_recept textarea:focus {
+	outline: 2px solid gold;
+}
+
+#dugme_odaberi2 {
+	position: absolute;
+	text-align: center;
+	top: 129px;
+	left: 10px;
+	width: 45%;
+	padding: 5px;
+	background: linear-gradient(to bottom, #ff9900, gold);
+}
+
+#dugme_odaberi2:hover {
+	cursor: pointer;
+	background: linear-gradient(to bottom, gold, #ff9900);
+}
+
+#dugme_dodajte_recept {
+	position: absolute;
+	text-align: center;
+	top: 129px;
+	right: 10px;
+	width: 46.5%;
+	font-size: 1em;
+	font-family: "times new roman";
+	padding: 5px;
+	background: linear-gradient(to bottom, #ff9900, gold);
+	border: none;
+}
+
+#dugme_dodajte_recept:hover {
+	cursor: pointer;
+	background: linear-gradient(to bottom, gold, #ff9900);
+}
+
+#odabrana2 {
+	display: none;
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.recept {
+	position: relative;
+	left: 10%;
+	right: 10%;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin-top: 20px;
+	width: 80%;
+}
+
+.recept > img {
+	height: 200px;
+	width: 200px;
+	margin: 20px;
+	border: 2px solid gold;
+	background-color: white;
+}
+
+#naziv_recepta {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 65%;
+	text-align: center;
+	background: linear-gradient(to bottom, red, gold);
+	border-radius: 5px;
+	font-size: 1.5em;
+}
+
+#vreme_pripreme {
+	position: absolute;
+	right: 20px;
+	top: 60px;
+	width: 65%;
+	font-size: 1.2em;
+}
+
+#tekst {
+	position: absolute;
+	right: 20px;
+	top: 100px;
+	width: 65%;
+}
+
+#podaci_korisnika_recepta {
+	position: absolute;
+	right: 80px;
+	top: 185px;
+	width: 57%;
+}
+
+#podaci_korisnika_recepta > img {
+	width: 40px;
+	height: 40px;
+}
+
+#podaci_korisnika_recepta > span {
+	vertical-align: 15px;
+}
+
+.dugme_izbrisi_recept {
+	position: absolute;
+	right: 10px;
+	top: -2px;
+}
+
+.dugme_izbrisi_recept:hover {
+	cursor: pointer;
+}
+
+.dugme_komentar {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	bottom: 20px;
+	right: 20px;
+	border: 2px solid green;
+	border-radius: 5px;
+	background-color: lime;
+	padding: 5px;
+}
+
+.dugme_komentar {
+	cursor: pointer;
+}
+
+.dugme_komentar img {
+	width: 20px;
+	height: 20px;
+}
+
+.forma_dodaj_komentar {
+	position: absolute;
+	width: 80%;
+	height: 0%;
+	left: 10%;
+	right: 10%;
+	transition: height 1s;
+	text-align: center;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: #cccccc;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.forma_dodaj_komentar textarea {
+	display: none;
+	margin: 10px;
+	width: 80%;
+	height: 60px;
+	border-radius: 5px;
+	padding: 10px;
+	overflow: auto;
+	float: left;
+}
+
+.forma_dodaj_komentar label {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	width: 10%;
+}
+
+.forma_dodaj_komentar input[type=number] {
+	display: none;
+	position: absolute;
+	top: 60px;
+	right: 19px;
+	border-radius: 5px;
+}
+
+.forma_dodaj_komentar > hr {
+	display: none;
+	width: 97%;
+}
+
+.dugme_dodajte_komentar {
+	display: none;
+	width: 97%;
+	background: linear-gradient(to bottom, #ff9900, gold);
+	border: none;
+	padding: 5px;
+}
+
+.dugme_dodajte_komentar:hover {
+	background: linear-gradient(to bottom, gold, #ff9900);
+	cursor: pointer;
+}
+
+.komentar {
+	display: none;
+	position: relative;
+}
+
+.komentar > img {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	margin-left: 10px;
+	float: left;
+}
+
+.komentar > img:hover {
+	cursor: pointer;
+}
+
+.podaci_korisnika {
+	display: none;
+	position: absolute;
+	width: 125px;
+	height: 135px;
+	background-color: #eeeeee;
+	border-radius: 5px;
+	left: -130px;
+	z-index: 2;
+}
+
+.podaci_korisnika:after {
+	content: "";
+	position: absolute;
+	right: -10px;
+	top: 18px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent #eeeeee;
+}
+
+.podaci_korisnika > img {
+	width: 90px;
+	height: 90px;
+	margin-top: 5px;
+}
+
+#tekst_kom {
+	width: 85.5%;
+	margin-left: 60px!important;
+	height: 45px;
+	margin: 0 10px;
+	padding: 10px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	background-color: #eeeeee;
+	text-align: left;
+}
+
+.dugme_izbrisi_komentar {
+	position: absolute;
+	top: 0px;
+	right: 17px;
+	font-size: 1.2em;
+}
+
+.dugme_izbrisi_komentar:hover {
+	cursor: pointer;
+}
+
+#ocena img {
+	margin: 5px 0px;
+	height: 20px;
+}
+
+footer {
+	text-align: center;
+	padding: 3%;
+	background-color: white;
+	margin-top: 2%;
+	border-top: 2px solid gray;
+	border-right: 2px solid gray;
+	border-bottom: none;
+	border-left: 2px solid gray;
+}
